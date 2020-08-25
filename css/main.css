@@ -1,0 +1,254 @@
+:root{
+    --overly-color: rgba(0, 0, 0, .6);
+    --default-color: #FFF;
+    --main-color: rgba(255, 152, 0, 1);
+    --default-transition: all .5s ease-in-out;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    height: 3000px;
+}
+.container{
+    margin: auto;
+}
+.visibale-xs, /*hadak elemnt ghaykon mkhfi fga3 lmedia ila l media li khtaritha lih ghayban fiha*/
+.visibale-sm,
+.visibale-md,
+.visibale-lg{
+    display: none;
+}
+.clearFix{
+    clear: both;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+/*
+     Create Heading Class
+     7it maymknch ykon 3andk ktar m h1 fl page
+     hadakchi 3alch kadir class h1 wt3tih khawas h1
+*/
+.h1{
+    font-size: 2em;
+}
+.h2{
+    font-size: 1.5em;
+}
+
+.img1{
+    background-image: url('../images/img1.jpg') !important;
+}
+.img2{
+    background-image: url('../images/img2.jpg') !important;
+}
+.img3{
+    background-image: url('../images/img3.jpg') !important;
+}
+.img4{
+    background-image: url('../images/img4.jpg') !important;
+}
+.img5{
+    background-image: url('../images/img5.jpg') !important;
+}
+/* start global media */
+@media ( max-width : 767px) and (min-width : 200px) /*hadchi ghaytab9 3la ay chacha l width dyalha makyfot 767px*/
+{
+    .visibale-xs
+    {
+        display: block !important;
+    }
+    .hidden-xs /*hadak elemnt ghaytkhfa fhad l media wyban fl media lokhrin*/
+    {
+        display: none !important;
+    }
+}
+@media (min-width : 768px)
+{
+    .container
+    {
+        width: 780px;
+    }
+    .visibale-sm
+    {
+        display: block !important;
+    }
+    .hidden-sm
+    {
+        display: none !important;
+    }
+}
+@media (min-width : 992px)
+{
+    .container
+    {
+        width: 1000px;
+    }
+    .visibale-md
+    {
+        display: block !important;
+    }
+    .hidden-md
+    {
+        display: none !important;
+    }
+}
+
+@media (min-width : 1200px)
+{
+    .container
+    {
+        width: 1200px;
+    }
+    .visibale-lg
+    {
+        display: block !important;
+    }
+    .hidden-lg
+    {
+        display: none !important;
+    }
+}
+/* end global media */
+
+/* start landing page*/
+div.landing-page{
+    min-height: 100vh;
+    background-image: url('../images/img5.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    background-color: var(--overly-color, #888);
+    background-blend-mode: overlay;
+    transition: all 1s ease-in-out;
+    position: relative;
+}
+div.landing-page header{
+    color: var(--default-color ,white);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+div.landing-page header div.logo{
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+}
+div.landing-page header ul.links{
+    list-style: none;
+    font-size: 15px
+}
+div.landing-page header ul.links li{
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: capitalize;
+}
+div.landing-page header ul.links li a{
+    text-decoration: none;
+    color: inherit;
+    transition: var(--default-transition);
+    position: relative;
+}
+div.landing-page header ul.links li a::after{
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color, orange);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: var(--default-transition);
+}
+div.landing-page header ul.links li a:hover,
+div.landing-page header ul.links li a.active{
+    color: var(--main-color, orange);
+}
+div.landing-page header ul.links li a:hover::after{
+    transform: scaleX(1);
+}
+div.landing-page section.introduction-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*bach yji lwest */
+    color: var(--default-color, white);
+    text-align: center;
+}
+div.landing-page section.introduction-text h1{
+    text-transform: capitalize;
+    font-size: 40px;
+    color: var(--main-color, orange);
+    width: 100%;
+}
+div.landing-page section.introduction-text p{
+    line-height: 1.6;
+    margin: 0px 10px;
+}
+@media ( max-width : 767px) and (min-width : 200px) /*hadchi ghaytab9 3la ay chacha l width dyalha makyfot 767px*/
+{
+    div.landing-page header{
+        padding: 0;
+    }
+    div.landing-page header .menu-btn{
+        padding: 10px 15px 15px;
+        cursor: pointer;
+        font-size: 22px;
+        transition: var(--default-transition);
+    }
+    div.landing-page header .menu-btn:hover{
+        color: var(--main-color, orange);
+    }
+    /*
+    .fixedPo header .menu-btn{
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        background-color: #00F;
+        text-align: right;
+        z-index: 2;
+    }
+    */
+
+    div.landing-page header ul{
+        position: fixed;
+        top: 50px;
+        left: 0;
+        background-color: #888;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        z-index: 2;
+        display: block;
+        text-align: center;
+        padding: 0;
+        transform: translateX(-100%);
+        transition: var(--default-transition);
+    }
+    .returnMenu header ul{
+        transform: translateX(0%) !important;
+    }
+    div.landing-page header ul li{
+        display: block !important;
+        margin: 40px auto !important;
+        width: fit-content;
+    }
+}
+@media (min-width : 768px)
+{
+}
+@media (min-width : 992px)
+{
+}
+
+@media (min-width : 1200px)
+{
+}
+/* end landing page */
