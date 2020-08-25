@@ -190,7 +190,7 @@ div.landing-page section.introduction-text h1{
 }
 div.landing-page section.introduction-text p{
     line-height: 1.6;
-    margin: 0px 10px;
+    margin: 0px;
 }
 @media ( max-width : 767px) and (min-width : 200px) /*hadchi ghaytab9 3la ay chacha l width dyalha makyfot 767px*/
 {
@@ -228,6 +228,12 @@ div.landing-page section.introduction-text p{
         display: block !important;
         margin: 40px auto !important;
         width: fit-content;
+    }
+    div.landing-page section.introduction-text h1{
+        font-size: 35px;
+    }
+    div.landing-page section.introduction-text p{
+        text-align: justify;
     }
 }
 @media (min-width : 768px)
