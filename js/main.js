@@ -1,6 +1,7 @@
 'use strict';
 var lndPage = document.getElementById('landing-page'),
-    myBaar = document.getElementById('myBaar');
+    myBaar = document.getElementById('myBaar'),
+    mylis = document.querySelectorAll('li');
 
 setInterval(function(){
     var rndNum = Math.floor(Math.random() *5) + 1;
@@ -30,12 +31,19 @@ myBaar.onclick = function(){
     lndPage.classList.toggle('returnMenu');
     // lndPage.classList.toggle('fixedPo');
     if(myBaar.getAttribute('class') == 'fas fa-bars'){
-        myBaar.setAttribute('class', 'fas fa-times')
+        myBaar.setAttribute('class', 'fas fa-times');
         window.addEventListener('scroll', noScroll);
     }
     else{
-        myBaar.setAttribute('class', 'fas fa-bars')
-        window.removeEventListener('scroll', noScroll)
+        myBaar.setAttribute('class', 'fas fa-bars');
+        window.removeEventListener('scroll', noScroll);
+    }
+}
+
+for(var i = 0; i < mylis.length; i++){
+    mylis[i].onclick = function(){
+        window.removeEventListener('scroll', noScroll);
+        lndPage.classList.toggle('returnMenu');
     }
 }
 
