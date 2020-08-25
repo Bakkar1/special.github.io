@@ -31,8 +31,14 @@ myBaar.onclick = function(){
     // lndPage.classList.toggle('fixedPo');
     if(myBaar.getAttribute('class') == 'fas fa-bars'){
         myBaar.setAttribute('class', 'fas fa-times')
+        window.addEventListener('scroll', noScroll);
     }
     else{
         myBaar.setAttribute('class', 'fas fa-bars')
+        window.removeEventListener('scroll', noScroll)
     }
+}
+
+function noScroll(){
+    window.scroll(0,0);
 }
