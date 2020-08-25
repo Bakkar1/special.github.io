@@ -216,10 +216,10 @@ div.landing-page section.introduction-text p{
         margin: 0;
         z-index: 2;
         display: block;
-        text-align: center;
         padding: 0;
         transform: translateX(-100%);
         transition: var(--default-transition);
+        padding-top: 60px;
     }
     .returnMenu header ul{
         transform: translateX(0%) !important;
