@@ -1,5 +1,5 @@
 :root{
-    --overly-color: rgba(0, 0, 0, .6);
+    --overly-color: rgba(0, 0, 0, .3);
     --default-color: #FFF;
     --main-color: rgba(255, 152, 0, 1);
     --default-transition: all .5s ease-in-out;
@@ -177,7 +177,8 @@ div.landing-page section.introduction-text{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /*bach yji lwest */
+    transform: translate(-50%, -50%); 
+    width: 80%;
     color: var(--default-color, white);
     text-align: center;
 }
@@ -205,18 +206,6 @@ div.landing-page section.introduction-text p{
     div.landing-page header .menu-btn:hover{
         color: var(--main-color, orange);
     }
-    /*
-    .fixedPo header .menu-btn{
-        position: fixed;
-        top: 0px;
-        right: 0px;
-        width: 100%;
-        background-color: #00F;
-        text-align: right;
-        z-index: 2;
-    }
-    */
-
     div.landing-page header ul{
         position: fixed;
         top: 50px;
@@ -243,6 +232,9 @@ div.landing-page section.introduction-text p{
 }
 @media (min-width : 768px)
 {
+    div.landing-page section.introduction-text h1{
+        font-size: 40px;
+    }
 }
 @media (min-width : 992px)
 {

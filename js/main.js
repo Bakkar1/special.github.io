@@ -26,10 +26,13 @@ setInterval(function(){
         }
     },
     3000);
+    
+function noScroll(){
+    window.scroll(0,0);
+}
 
 myBaar.onclick = function(){
     lndPage.classList.toggle('returnMenu');
-    // lndPage.classList.toggle('fixedPo');
     if(myBaar.getAttribute('class') == 'fas fa-bars'){
         myBaar.setAttribute('class', 'fas fa-times');
         window.addEventListener('scroll', noScroll);
@@ -45,8 +48,4 @@ for(var i = 0; i < mylis.length; i++){
         window.removeEventListener('scroll', noScroll);
         lndPage.classList.toggle('returnMenu');
     }
-}
-
-function noScroll(){
-    window.scroll(0,0);
 }
