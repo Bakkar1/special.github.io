@@ -40,6 +40,21 @@ body{
 .h2{
     font-size: 1.5em;
 }
+.img1{
+    background-image: url('../images/img1.jpg') !important;
+}
+.img2{
+    background-image: url('../images/img2.jpg') !important;
+}
+.img3{
+    background-image: url('../images/img3.jpg') !important;
+}
+.img4{
+    background-image: url('../images/img4.jpg') !important;
+}
+.img5{
+    background-image: url('../images/img5.jpg') !important;
+}
 /* start global media */
 @media ( max-width : 767px) and (min-width : 200px) /*hadchi ghaytab9 3la ay chacha l width dyalha makyfot 767px*/
 {
