@@ -1,7 +1,8 @@
 'use strict';
 var lndPage = document.querySelector('.landing-page'), //n9der njib l elemyn b l class name
     myBaar = document.getElementById('myBaar'),
-    mylis = document.querySelectorAll('.links li');
+    mylis = document.querySelectorAll('.links li'),
+    myHeader = document.querySelector('header');
 /*
 change background img my way using css
 setInterval(function(){
@@ -51,10 +52,12 @@ myBaar.onclick = function(){
     if(myBaar.getAttribute('class') == 'fas fa-bars'){
         myBaar.setAttribute('class', 'fas fa-times');
         window.addEventListener('scroll', noScroll);
+        myHeader.style.backgroundColor = 'rgba(0, 0, 0, .9)';
     }
     else{
         myBaar.setAttribute('class', 'fas fa-bars');
         window.removeEventListener('scroll', noScroll);
+        myHeader.style.backgroundColor = 'transparent';
     }
 }
 

@@ -179,6 +179,7 @@ div.landing-page section.introduction-text p{
 {
     div.landing-page header{
         padding: 0;
+        transition: var(--default-transition);
     }
     div.landing-page header .menu-btn{
         padding: 10px 15px 15px;
