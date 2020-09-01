@@ -4,11 +4,16 @@ var lndPage = document.querySelector('.landing-page'), //n9der njib l elemyn b l
     mylis = document.querySelectorAll('.links li'),
     myHeader = document.querySelector('header'),
     mySettings = document.querySelector('.settings-box'),
-    myIconSnt = document.querySelector('.fa-sun'),
-    iconSntParent = document.querySelector('.icon-parent');
+    myIconSnt = document.querySelector('.fa-sun');
+
+// start menu settings
+myIconSnt.onclick = function(){
+    mySettings.classList.toggle('open-settings');
+    this.classList.toggle('turn-icon');
+}
+// end menu settings 
 
 // change background img my way using css
-
 setInterval(function(){
     var rndNum = Math.floor(Math.random() *5) + 1;
     lndPage.classList.remove('img1','img2','img3','img4','img5');
@@ -72,10 +77,3 @@ for(var i = 0; i < mylis.length; i++){
         myHeader.style.backgroundColor = 'none';
     }
 }
-
-// start menu settings
-iconSntParent.onclick = function(){
-    mySettings.classList.toggle('open-settings');
-    myIconSnt.classList.toggle('turn-icon');
-}
-// end menu settings 
