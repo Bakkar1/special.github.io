@@ -138,7 +138,7 @@ div.settings-box{
 div.settings-box div.icon-parent{
     position: absolute;
     padding: 8px 0;
-    top: 100px;
+    top: 25%;
     right: -30px;
     width: 30px;
     background-color: rgba(0, 0, 0, .8);
