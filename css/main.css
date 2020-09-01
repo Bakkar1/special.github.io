@@ -127,7 +127,7 @@ div.settings-box{
     --local-trans: all 1s ease-in-out;
     position: fixed;
     width: 200px;
-    bottom: 0px;
+    top: 0px;
     left: -200px;
     background-color: rgba(0, 0, 0, .8);
     color: #FFF;
