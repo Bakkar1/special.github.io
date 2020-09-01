@@ -132,7 +132,7 @@ div.settings-box{
     background-color: rgba(0, 0, 0, .8);
     color: #FFF;
     z-index: 50;
-    height: 100vh;
+    min-height: 100vh;
     transition: var(--local-trans);
 }
 div.settings-box div.icon-parent{
