@@ -273,11 +273,14 @@ div.landing-page section.introduction-text p{
     line-height: 1.6;
     margin: 0px;
 }
-@media ( max-width : 767px) and (min-width : 200px) /*hadchi ghaytab9 3la ay chacha l width dyalha makyfot 767px*/
+@media ( max-width : 767px) /*hadchi ghaytab9 3la ay chacha l width dyalha makyfot 767px*/
 {
+    div.landing-page{
+        --mediaS-transition: all .1s ease-in-out;
+    }
     div.landing-page header{
         padding: 0;
-        transition: var(--default-transition);
+        transition: var(--mediaS-transition);
     }
     div.landing-page header .menu-btn{
         padding: 10px 15px 15px;
@@ -300,16 +303,20 @@ div.landing-page section.introduction-text p{
         display: block;
         padding: 0;
         transform: translateX(-100%);
-        transition: var(--default-transition);
+        transition: var(--mediaS-transition);
         padding-top: 60px;
     }
     .returnMenu header ul{
+        transform: translateX(0%) !important;
+    }.returnMenu header ul li{
         transform: translateX(0%) !important;
     }
     div.landing-page header ul li{
         display: block !important;
         margin: 40px auto !important;
         width: fit-content;
+        transform: translateX(-100%);
+        transition: all .4s ease-in-out;
     }
     div.landing-page header ul.links li a::after{
         transition: all .3s ease-in-out;

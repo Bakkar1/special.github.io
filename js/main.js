@@ -88,6 +88,6 @@ for(var i = 0; i < mylis.length; i++){
         window.removeEventListener('scroll', noScroll);
         lndPage.classList.remove('returnMenu');
         myBaar.setAttribute('class', 'fas fa-bars');
-        myHeader.style.backgroundColor = 'none';
+        myHeader.style.backgroundColor = 'transparent';
     }
 }
