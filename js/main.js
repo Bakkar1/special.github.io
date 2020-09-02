@@ -7,10 +7,24 @@ var lndPage = document.querySelector('.landing-page'), //n9der njib l elemyn b l
     myIconSnt = document.querySelector('.fa-sun');
 
 // start menu settings
+/*open menu setting*/
 myIconSnt.onclick = function(){
     mySettings.classList.toggle('open-settings');
     this.classList.toggle('turn-icon');
 }
+/* switch main color*/
+var myLiColors = document.querySelectorAll('.colors-list li');
+for(var c = 0; c < myLiColors.length; c++){
+    myLiColors[c].onclick = function(){
+        myLiColors.forEach(elm => elm.classList.remove('active'));
+        this.classList.add('active');
+        //get data-color
+        var myColor = this.getAttribute('data-color');
+        //set colors on root
+        document.documentElement.style.setProperty('--main-color', myColor);
+    }
+}
+
 // end menu settings 
 
 // change background img my way using css
