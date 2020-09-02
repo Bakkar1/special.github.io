@@ -159,7 +159,7 @@ div.settings-box .settings-container .option-box{
 }
 div.settings-box .settings-container .option-box h4{
     margin: 0;
-    color: #666;
+    color: var(--default-color);
 }
 div.settings-box .settings-container .option-box ul.colors-list{
     list-style: none;
@@ -275,6 +275,9 @@ div.landing-page section.introduction-text p{
 }
 @media ( max-width : 767px) /*hadchi ghaytab9 3la ay chacha l width dyalha makyfot 767px*/
 {
+    .filterB{
+        /* filter: blur(1px); */
+    }
     div.landing-page{
         --mediaS-transition: all .1s ease-in-out;
     }
@@ -290,6 +293,9 @@ div.landing-page section.introduction-text p{
     }
     div.landing-page header .menu-btn:hover{
         color: var(--main-color, orange);
+    }
+    div.landing-page header .menu-btn:active{
+        transform: scale(0);
     }
     div.landing-page header ul{
         position: fixed;

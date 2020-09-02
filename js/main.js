@@ -9,6 +9,7 @@ var lndPage = document.querySelector('.landing-page'), //n9der njib l elemyn b l
 // start menu settings
 /*open menu setting*/
 myIconSnt.onclick = function(){
+    lndPage.classList.toggle('filterB');
     mySettings.classList.toggle('open-settings');
     this.classList.toggle('turn-icon');
 }
