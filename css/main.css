@@ -154,7 +154,6 @@ div.settings-box div.icon-parent i{
 div.settings-box div.icon-parent:hover i{
     color: var(--main-color ,orange);
 }
-    
 div.settings-box .settings-container .option-box{
     padding: 20px;
     text-transform: capitalize;
