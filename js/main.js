@@ -8,21 +8,41 @@ var lndPage = document.querySelector('.landing-page'), //n9der njib l elemyn b l
 
 // start menu settings
 /*open menu setting*/
+var myLiColors = document.querySelectorAll('.colors-list li');
+
+let mainColors = localStorage.getItem("color_option");
+// chek if ther is local storage color option
+if(mainColors !== null){
+    // set the localstorage value on root
+    document.documentElement.style.setProperty('--main-color', mainColors);
+    myLiColors.forEach(elm => { 
+        //remove active class from all the childeren
+        elm.classList.remove('active');
+        //add active class on element with data-color === color storage Item
+        if(elm.getAttribute('data-color') === mainColors){
+            elm.classList.add('active');
+        }
+    });
+}
 myIconSnt.onclick = function(){
     lndPage.classList.toggle('filterB');
     mySettings.classList.toggle('open-settings');
     this.classList.toggle('turn-icon');
 }
 /* switch main color*/
-var myLiColors = document.querySelectorAll('.colors-list li');
 for(var c = 0; c < myLiColors.length; c++){
     myLiColors[c].onclick = function(){
+        //remove active class from all the childeren
         myLiColors.forEach(elm => elm.classList.remove('active'));
+        // ADD active class on current element
         this.classList.add('active');
         //get data-color
         var myColor = this.getAttribute('data-color');
         //set colors on root
         document.documentElement.style.setProperty('--main-color', myColor);
+        //stoor color on local Storage
+        localStorage.setItem("color_option", myColor);
+
     }
 }
 

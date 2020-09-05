@@ -155,16 +155,19 @@ div.settings-box div.icon-parent:hover i{
 }
 div.settings-box .settings-container .option-box{
     padding: 20px;
-    text-transform: capitalize;
+    text-align: center;
 }
 div.settings-box .settings-container .option-box h4{
     margin: 0;
     color: var(--default-color);
+    text-transform: capitalize;
+    color: var(--main-color, orange);
+    transition: var(--default-transition)
 }
 div.settings-box .settings-container .option-box ul.colors-list{
     list-style: none;
-    text-align: center;
     padding: 0;
+    margin: 15px 0 0;
 }
 div.settings-box .settings-container .option-box ul.colors-list li{
     width: 20px;
@@ -205,7 +208,7 @@ div.landing-page{
     background-position: center;
     background-color: var(--overly-color, #888);
     background-blend-mode: overlay;
-    transition: all 1s ease-in-out;
+    transition: all 3s ease-in-out;
     position: relative;
 }
 div.landing-page header{
