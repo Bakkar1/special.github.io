@@ -239,7 +239,6 @@ div.settings-box .random-background span.active{
 /* start landing page*/
 div.landing-page{
     min-height: 100vh;
-    background-image: url('../images/img5.jpg');
     background-size: cover;
     background-position: center;
     background-color: var(--overly-color, #888);

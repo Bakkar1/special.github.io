@@ -64,7 +64,6 @@ if(backgroundLocalItem !== null){
     //remove active class from all the childeren
     randomBackEl.forEach(span => {
         span.classList.remove('active');
-    
     });
     
     if(backgroundLocalItem === 'true'){
@@ -75,8 +74,14 @@ if(backgroundLocalItem !== null){
         backgroundOption = false;
         document.querySelector('.random-background .no').classList.add("active");
     }
+}
+
+window.onload = function(){
     if(currentBackImage !== null){
         lndPage.style.backgroundImage = currentBackImage;
+    }
+    else{
+        lndPage.style.backgroundImage = "url('../images/img5.jpg')";
     }
 }
 
