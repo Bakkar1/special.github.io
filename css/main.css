@@ -66,6 +66,9 @@ body{
     {
         display: none !important;
     }
+    .resp-paragraph{
+        font-size: 18px;
+    }
 }
 @media (min-width : 768px)
 {
@@ -81,6 +84,9 @@ body{
     {
         display: none !important;
     }
+    .resp-paragraph{
+        font-size: 20px;
+    }
 }
 @media (min-width : 992px)
 {
@@ -95,6 +101,9 @@ body{
     .hidden-md
     {
         display: none !important;
+    }
+    .resp-paragraph{
+        font-size: 22px;
     }
 }
 
@@ -112,6 +121,9 @@ body{
     {
         display: none !important;
     }
+    .resp-paragraph{
+        font-size: 24px;
+    }
 }
 /* end global media */
 
@@ -126,9 +138,9 @@ body{
 div.settings-box{
     --local-trans: all 1s ease-in-out;
     position: fixed;
-    width: 200px;
+    width: 250px;
     top: 0px;
-    left: -200px; 
+    left: -250px; 
     background-color: rgba(0, 0, 0, .8);
     color: #FFF;
     z-index: 50;
@@ -162,7 +174,7 @@ div.settings-box .settings-container .option-box h4{
     color: var(--default-color);
     text-transform: capitalize;
     color: var(--main-color, orange);
-    transition: var(--default-transition)
+    transition: var(--default-transition);
 }
 div.settings-box .settings-container .option-box ul.colors-list{
     list-style: none;
@@ -198,6 +210,30 @@ div.settings-box .settings-container .option-box ul.colors-list li:nth-child(4){
 }
 div.settings-box .settings-container .option-box ul.colors-list li:nth-child(5){
     background-color: #4CAF50;
+}
+
+div.settings-box .random-background .yes,
+div.settings-box .random-background .no{
+    margin-top: 20px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: .5;
+    transition: var(--default-transition);
+}
+div.settings-box .random-background .yes{
+    background-color: #03A9F4;
+}
+div.settings-box .random-background .no{
+    background-color: #03A9F4;
+}
+div.settings-box .random-background span.active{
+    opacity: 1;
+    background-color: var(--main-color);
 }
 /* end settings box */
 /* start landing page*/

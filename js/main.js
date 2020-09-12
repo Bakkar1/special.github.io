@@ -4,13 +4,13 @@ var lndPage = document.querySelector('.landing-page'), //n9der njib l elemyn b l
     mylis = document.querySelectorAll('.links li'),
     myHeader = document.querySelector('header'),
     mySettings = document.querySelector('.settings-box'),
-    myIconSnt = document.querySelector('.fa-sun');
+    myIconSnt = document.querySelector('.fa-sun'),
+    myLiColors = document.querySelectorAll('.colors-list li'),
+    mainColors = localStorage.getItem("color_option"),
+    randomBackEl = document.querySelectorAll('.random-background span');
 
 // start menu settings
-/*open menu setting*/
-var myLiColors = document.querySelectorAll('.colors-list li');
 
-let mainColors = localStorage.getItem("color_option");
 // chek if ther is local storage color option
 if(mainColors !== null){
     // set the localstorage value on root
@@ -24,12 +24,14 @@ if(mainColors !== null){
         }
     });
 }
+/*open menu setting*/
 myIconSnt.onclick = function(){
     lndPage.classList.toggle('filterB');
     mySettings.classList.toggle('open-settings');
     this.classList.toggle('turn-icon');
 }
 /* switch main color*/
+// loop on all li
 for(var c = 0; c < myLiColors.length; c++){
     myLiColors[c].onclick = function(){
         //remove active class from all the childeren
@@ -42,12 +44,38 @@ for(var c = 0; c < myLiColors.length; c++){
         document.documentElement.style.setProperty('--main-color', myColor);
         //stoor color on local Storage
         localStorage.setItem("color_option", myColor);
-
     }
 }
 
-// end menu settings 
+/* switch random background color*/
+//random background option
+let backgroundOption = true;
 
+//variable to control the background intervale
+let backgroundIntervale;
+
+// loop on all span
+for(var c = 0; c < randomBackEl.length; c++){
+    randomBackEl[c].onclick = function(){
+        //remove active class from all the childeren
+        randomBackEl.forEach(span => span.classList.remove('active'));
+        // ADD active class on current child
+        this.classList.add('active');
+
+        if(this.getAttribute("data-background") === "yes"){
+            backgroundOption = true;
+            randomizeImgs();
+        }
+        else{
+            backgroundOption = false;
+            clearInterval(backgroundIntervale);
+        }
+    }
+}
+
+
+// end menu settings 
+/*
 // change background img my way using css
 setInterval(function(){
     var rndNum = Math.floor(Math.random() *5) + 1;
@@ -72,20 +100,28 @@ setInterval(function(){
         }
     },
     10000);
+*/
 
-/*
 //elzero way change background img only js :
 
 // get array of img
-let imgsArray = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"]
-setInterval(function(){
-    // get Random number
-    let rndomNum = Math.floor(Math.random() * imgsArray.length);
-    // change background image URL
-    lndPage.style.backgroundImage = "url('../images/"+ imgsArray[rndomNum] +"')";
-}, 10000);
-*/
+let imgsArray = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"];
 
+//function to randomize imgs
+function randomizeImgs(){
+    if(backgroundOption === true){
+        backgroundIntervale = setInterval(function(){
+            // get Random number
+            let rndomNum = Math.floor(Math.random() * imgsArray.length);
+            // change background image URL
+            lndPage.style.backgroundImage = "url('../images/"+ imgsArray[rndomNum] +"')";
+        }, 2000);
+    }
+}
+randomizeImgs();
+//end change background img only js :
+
+//stop scrolling
 function noScroll(){
     window.scroll(0,0);
 }
