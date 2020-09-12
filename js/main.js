@@ -7,7 +7,8 @@ var lndPage = document.querySelector('.landing-page'), //n9der njib l elemyn b l
     myIconSnt = document.querySelector('.fa-sun'),
     myLiColors = document.querySelectorAll('.colors-list li'),
     mainColors = localStorage.getItem("color_option"),
-    randomBackEl = document.querySelectorAll('.random-background span');
+    randomBackEl = document.querySelectorAll('.random-background span'),
+    currentBackImage = localStorage.getItem("current-BackImage");
 
 // start menu settings
 
@@ -47,12 +48,37 @@ for(var c = 0; c < myLiColors.length; c++){
     }
 }
 
-/* switch random background color*/
+/* switch random background imgs*/
 //random background option
 let backgroundOption = true;
 
 //variable to control the background intervale
 let backgroundIntervale;
+
+// check if there s local storage random background item
+
+let backgroundLocalItem = localStorage.getItem('background-option');
+
+//chekc if random background local storage is not empty
+if(backgroundLocalItem !== null){
+    //remove active class from all the childeren
+    randomBackEl.forEach(span => {
+        span.classList.remove('active');
+    
+    });
+    
+    if(backgroundLocalItem === 'true'){
+        backgroundOption = true;
+        document.querySelector('.random-background .yes').classList.add('active');
+    }
+    else{
+        backgroundOption = false;
+        document.querySelector('.random-background .no').classList.add("active");
+    }
+    if(currentBackImage !== null){
+        lndPage.style.backgroundImage = currentBackImage;
+    }
+}
 
 // loop on all span
 for(var c = 0; c < randomBackEl.length; c++){
@@ -70,6 +96,7 @@ for(var c = 0; c < randomBackEl.length; c++){
             backgroundOption = false;
             clearInterval(backgroundIntervale);
         }
+        localStorage.setItem('background-option', backgroundOption);
     }
 }
 
@@ -115,7 +142,8 @@ function randomizeImgs(){
             let rndomNum = Math.floor(Math.random() * imgsArray.length);
             // change background image URL
             lndPage.style.backgroundImage = "url('../images/"+ imgsArray[rndomNum] +"')";
-        }, 2000);
+            localStorage.setItem('current-BackImage', "url('../images/"+ imgsArray[rndomNum] +"')");
+        }, 10000);
     }
 }
 randomizeImgs();
