@@ -81,7 +81,7 @@ window.onload = function(){
         lndPage.style.backgroundImage = currentBackImage;
     }
     else{
-        lndPage.style.backgroundImage = "url('../images/img5.jpg')";
+        lndPage.style.backgroundImage = "url('images/img5.jpg')";
     }
 }
 
