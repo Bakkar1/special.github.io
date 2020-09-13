@@ -146,8 +146,8 @@ function randomizeImgs(){
             // get Random number
             let rndomNum = Math.floor(Math.random() * imgsArray.length);
             // change background image URL
-            lndPage.style.backgroundImage = "url('../images/"+ imgsArray[rndomNum] +"')";
-            localStorage.setItem('current-BackImage', "url('../images/"+ imgsArray[rndomNum] +"')");
+            lndPage.style.backgroundImage = "url('images/"+ imgsArray[rndomNum] +"')";
+            localStorage.setItem('current-BackImage', "url('images/"+ imgsArray[rndomNum] +"')");
         }, 10000);
     }
 }
@@ -158,7 +158,7 @@ randomizeImgs();
 function noScroll(){
     window.scroll(0,0);
 }
-
+/* show menu settings */
 myBaar.onclick = function(){
     lndPage.classList.toggle('returnMenu');
     if(myBaar.getAttribute('class') == 'fas fa-bars'){
@@ -173,6 +173,7 @@ myBaar.onclick = function(){
     }
 }
 
+/*back to page on click op any element a*/
 for(var i = 0; i < mylis.length; i++){
     mylis[i].onclick = function(){
         window.removeEventListener('scroll', noScroll);
