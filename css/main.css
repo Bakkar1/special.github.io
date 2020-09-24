@@ -389,3 +389,56 @@ div.landing-page section.introduction-text p{
 {
 }
 /* end landing page */
+/*start about us*/
+div.about-us{
+    text-align: center;
+    padding: 100px 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+div.about-us .info-box{
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+div.about-us .info-box h2{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+div.about-us .info-box p{
+    line-height: 1.8;
+    color: #767676;
+    margin: 0;
+}
+div.about-us .img-box{
+    flex: 1;
+    
+}
+/*
+div.about-us .img-box img{
+    width: 300px;
+    text-align: center;
+}
+*/
+.specSvg{
+    width: 400px;
+    height: 400px;
+    transition: all 1s ease-in-out;
+    transform: rotateZ(10deg);
+}
+div.about-us:hover .specSvg{
+    transform: rotateZ(s0deg);
+}
+.my-svg{
+    fill: var(--main-color);
+    transition: var(--default-transition);
+}
+/* end about us */
