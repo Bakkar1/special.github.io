@@ -217,7 +217,7 @@ window.onscroll = function(){
 // select skills selector 
 
 let ourSkills = document.querySelector('.skills');
-
+var isgedaan = false;
 window.onscroll = function(){
     // skills offset top yjib lik top dyal hadak l element
     let skillsOffsetTop = ourSkills.offsetTop;
@@ -234,8 +234,7 @@ window.onscroll = function(){
         windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)
         had lmo3adala ghatkhlik tjib bdebt fach ywsal scroll top dyal skills window
     */
-
-    if(windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)){
+    if(windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight) && isgedaan == false){
         let allSkills = document.querySelectorAll('.skills-progress span');
 
         allSkills.forEach(skill => {
@@ -248,7 +247,9 @@ window.onscroll = function(){
                     clearInterval(contIntervale);
                 }
             }, 40)
+            
         })
+        isgedaan = true;
     }
 }
 
