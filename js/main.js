@@ -185,6 +185,9 @@ for(var i = 0; i < mylis.length; i++){
 
 var pro = 0;
 //start progress
+/*
+my way : 
+
 var myProSpan1 = document.getElementById('span1'),
 myProSpan2 = document.getElementById('span2');
 
@@ -207,6 +210,46 @@ function progressFun(max, elmP){
 window.onscroll = function(){
     progressFun(myProSpan1.getAttribute('data-width'), myProSpan1);
     progressFun(myProSpan2.getAttribute('data-width'), myProSpan2);
+}
+*/
+
+//elzero way
+// select skills selector 
+
+let ourSkills = document.querySelector('.skills');
+
+window.onscroll = function(){
+    // skills offset top yjib lik top dyal hadak l element
+    let skillsOffsetTop = ourSkills.offsetTop;
+    // skills outer height 
+    // ghayjib lik l heigt dyal hadak l element bl border padding ...
+    let skillsOuterHeight = ourSkills.offsetHeight;
+
+    //windows heigh the height of current window li nta fiha
+    let windowHeight = this.innerHeight;
+
+    //windows scrollTop kayjib lik fin katdir scroll bl px
+    let windowScrollTop = this.pageYOffset;
+    /*
+        windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)
+        had lmo3adala ghatkhlik tjib bdebt fach ywsal scroll top dyal skills window
+    */
+
+    if(windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)){
+        let allSkills = document.querySelectorAll('.skills-progress span');
+
+        allSkills.forEach(skill => {
+            skill.style.width = skill.dataset.progress + "%";
+            var i= 0;
+            var contIntervale = setInterval(function(){
+                skill.textContent = i.toString() + "%";
+                i++;
+                if(i > skill.dataset.progress){
+                    clearInterval(contIntervale);
+                }
+            }, 40)
+        })
+    }
 }
 
 //end progress

@@ -502,6 +502,29 @@ div.about-us .specSvg:hover{
     top: 0;
     left: 0;
     border-radius: 10px;
+    transition: all 3s ease-in-out;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 5px;
+}
+@media ( max-width : 767px){
+    .skills .skills-box{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .skills .skills-box .skills-name{
+        width: 100%;
+    }
+    .skills .skills-box .skills-progress{
+        margin: 10px auto;
+    }
+}
+@media (min-width : 768px){
+
+}
+@media (min-width : 992px){
 }
 
+@media (min-width : 1200px){
+}
 /* end our skills */
