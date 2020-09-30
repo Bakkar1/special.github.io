@@ -182,3 +182,31 @@ for(var i = 0; i < mylis.length; i++){
         myHeader.style.backgroundColor = 'transparent';
     }
 }
+
+var pro = 0;
+//start progress
+var myProSpan1 = document.getElementById('span1'),
+myProSpan2 = document.getElementById('span2');
+
+var isTrue = true;
+function progressFun(max, elmP){
+    if(window.scrollY > 800 && isTrue == true)
+    {
+        var proIntervale = setInterval(function(){
+            var Pwidth = pro.toString() + "%";
+            elmP.style.width = Pwidth;
+            pro++;
+            if(pro > max){
+                clearInterval(proIntervale);
+            }
+            isTrue = false;
+        }, 30)
+    }
+}
+
+window.onscroll = function(){
+    progressFun(myProSpan1.getAttribute('data-width'), myProSpan1);
+    progressFun(myProSpan2.getAttribute('data-width'), myProSpan2);
+}
+
+//end progress

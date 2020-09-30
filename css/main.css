@@ -422,23 +422,86 @@ div.about-us .img-box{
     flex: 1;
     
 }
-/*
-div.about-us .img-box img{
-    width: 300px;
-    text-align: center;
-}
-*/
-.specSvg{
-    width: 400px;
-    height: 400px;
+div.about-us .specSvg{
     transition: all 1s ease-in-out;
     transform: rotateZ(10deg);
 }
-div.about-us:hover .specSvg{
-    transform: rotateZ(s0deg);
+div.about-us .specSvg:hover{
+    transform: rotateZ(0deg);
 }
 .my-svg{
     fill: var(--main-color);
     transition: var(--default-transition);
 }
+@media ( max-width : 767px){
+    .specSvg{
+        width: 300px;
+        height: 300px;
+    }
+
+}
+@media (min-width : 768px){
+    .specSvg{
+        width: 350px;
+        height: 350px;
+    }
+
+}
+@media (min-width : 992px){
+    .specSvg{
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (min-width : 1200px){
+}
+
 /* end about us */
+/* start our skills  */
+.skills{
+    padding: 50px 0;
+    background-color: var(--main-color);
+}
+.skills h2{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--default-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.skills .skills-box{
+    background-color: var(--default-color);
+    display: flex;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    flex-wrap: wrap; 
+}
+.skills .skills-box .skills-name{
+    font-weight: bold;
+    min-width: 100px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+.skills .skills-box .skills-progress{
+    background-color: #f6f6f6;
+    height: 30px;
+    width: calc(100% - 100px);
+    border-radius: 10px; 
+    position: relative;
+}
+.skills .skills-box .skills-progress span{
+    height: 100%;
+    width: 0%;
+    background-color: violet;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+/* end our skills */
