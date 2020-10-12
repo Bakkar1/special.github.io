@@ -254,3 +254,72 @@ window.onscroll = function(){
 }
 
 //end progress
+
+// create popup width the image 
+
+let ourGallery = document.querySelectorAll('.images-box img');
+
+ourGallery.forEach(img => {
+    img.onclick = function(){
+        // create overly element 
+        let overly = document.createElement('div');
+        // add class to overly 
+        overly.classList.add('popup-overly');
+        // APPEND OVERLY TO THE BODY
+        document.body.appendChild(overly);
+
+        //create the popup
+        let popupBox = document.createElement('div');
+
+        // add class to popupBox
+        popupBox.className = 'popup-box';
+        
+        if(this.alt !== null){
+            //create heding
+            let imageHeading = document.createElement('h3');
+            // create text for imageHeading
+            let imgText = document.createTextNode(this.alt);
+            // append the text to the heding 
+            imageHeading.appendChild(imgText);
+            
+            // append the hedaing to the popup box 
+            popupBox.appendChild(imageHeading);
+        }
+
+        // create the img 
+        let popupImage = document.createElement('img');
+
+        //set image sourse
+        popupImage.src = this.src;
+
+        //add image to popupbox
+        popupBox.appendChild(popupImage);
+
+        //add popupbox to the overly
+        overly.appendChild(popupBox);
+
+        // create the close span 
+        let closeSpan = document.createElement('span');
+        closeSpan.classList.add('closeSpan');
+        popupBox.appendChild(closeSpan);
+    };
+});
+
+// close popup 
+/*
+    addEventListener 7it ana ghandir fnction l chi element makynch
+
+    e.target.classList.contains('closeSpan')
+    kat3ni yla hadak l element li kan7ado (target) 3ando class
+    smito closeSpan 7ayad overly bdakchi li fih
+*/
+document.addEventListener('click', function(e){
+    if(e.target.classList.contains('closeSpan')){
+        //remove overly
+        document.querySelector('.popup-overly').remove();
+        /*
+        //remove the current popup
+        e.target.parentNode.remove();
+        */
+    }
+});
