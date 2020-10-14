@@ -3,6 +3,7 @@
     --default-color: #FFF;
     --main-color: rgba(255, 152, 0, 1);
     --default-transition: all .5s ease-in-out;
+    --default-padding : 50px 0;
 }
 *{
     box-sizing: border-box;
@@ -29,6 +30,9 @@ body{
 }
 .float-right{
     float: right;
+}
+.clearFix{
+    clear: both;
 }
 /*
      Create Heading Class
@@ -461,7 +465,7 @@ div.about-us .specSvg:hover{
 /* end about us */
 /* start our skills  */
 .skills{
-    padding: 50px 0;
+    padding: var(--default-padding);
     background-color: var(--main-color);
 }
 .skills h2{
@@ -531,7 +535,7 @@ div.about-us .specSvg:hover{
 /* end our skills */
 /* start gallery */
 .gallery{
-    padding: 50px 0;
+    padding: var(--default-padding);
 }
 .gallery h2{
     font-weight: bold;
@@ -612,3 +616,117 @@ div.about-us .specSvg:hover{
     color: var(--main-color);
 }
 /* end gallery */
+/* start timeline */
+.timeline{
+    padding: var(--default-padding);
+    background-color: #DDD;
+}
+.timeline .timeline-content{
+    position: relative;
+    overflow: hidden;
+}
+.timeline .timeline-content::before{
+    content : "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* transform: translateX(-50%); gebruik this or margin om te centreren */
+    margin-left: -1px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+}
+.timeline .timeline-content .year{
+    width: 50px;
+    margin: 20px auto;
+    background-color: var(--main-color);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    border-radius: 4px;
+    color: var(--default-color);
+    padding: 2px 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.timeline .timeline-content .left,
+.timeline .timeline-content .right{
+    margin-bottom: 40px;
+    width: calc(50% - 25px);
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+.timeline .timeline-content:nth-child(2) .left,
+.timeline .timeline-content:nth-child(2) .right{
+    transition: all 1.2s ease-in-out;
+}
+.timeline .timeline-content:nth-child(3) .left,
+.timeline .timeline-content:nth-child(3) .right{
+    transition: all 1.4s ease-in-out;
+}
+
+.timeline .timeline-content .left{
+    float: left;
+    transform: translateX(-100%);
+}
+.timeline .timeline-content .right{
+    float: right;
+    transform: translateX(100%);
+}
+.backToNormal{
+    transform: translateX(0) !important;
+}
+.timeline .timeline-content .content{
+    padding: 20px;
+    background-color: var(--default-color);
+    border-radius: 10px;
+}
+.timeline .timeline-content .content h3{
+    width: fit-content;
+    margin: auto;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+.timeline .timeline-content .content p{
+    color: #666666;
+    margin: 0;
+    line-height: 1.6;
+}
+@media ( max-width : 767px){
+    .timeline .timeline-content .left,
+    .timeline .timeline-content .right{
+        width: 80%;
+        float: none;
+        margin:0 auto 20px;
+        overflow: hidden;
+    }
+    .timeline .timeline-content .left{
+        transform: translateX(-115%);
+    }
+    .timeline .timeline-content .right{
+        transform: translateX(115%);
+    }
+}
+@media (min-width : 768px){
+
+}
+@media (min-width : 992px){
+    
+}
+
+@media (min-width : 1200px){
+    .timeline .timeline-content .left,
+    .timeline .timeline-content .right{
+        width: 45%;
+        margin-bottom: 0px;
+    }
+    .timeline .timeline-content .left{
+        margin-right: calc(100% - 45%);
+    }
+    .timeline .timeline-content .right{
+        margin-left: calc(100% - 45%);
+    }
+}
+/* end timeLine */

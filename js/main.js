@@ -323,3 +323,42 @@ document.addEventListener('click', function(e){
         */
     }
 });
+
+// start timeline 
+let myYear = document.querySelectorAll('.year'),
+    timeLeft = document.querySelectorAll('.left'),
+    timeRight = document.querySelectorAll('.right'),
+    myTimeLine = document.querySelector('.sayHalo');
+
+    /*
+myYear.forEach(year => {
+    year.onclick = function(){
+        timeLeft.forEach(tm => tm.classList.toggle('backToNormal'));
+        timeRight.forEach(tm => tm.classList.toggle('backToNormal'));
+    }
+})
+*/
+var isGebeurt = false;
+
+window.addEventListener('scroll', function(){
+        // skills offset top yjib lik top dyal hadak l element
+        let myTimeLineOffsetTop = myTimeLine.offsetTop;
+        // skills outer height 
+        // ghayjib lik l heigt dyal hadak l element bl border padding ...
+        let myTimeLineOuterHeight = myTimeLine.offsetHeight;
+    
+        //windows heigh the height of current window li nta fiha
+        let windowHeight = this.innerHeight;
+    
+        //windows scrollTop kayjib lik fin katdir scroll bl px
+        let windowScrollTop = this.pageYOffset;
+            // windowScrollTop > (skillsOffsetTop + skillsOuterHeight - windowHeight)
+            // had lmo3adala ghatkhlik tjib bdebt fach ywsal scroll top dyal skills window
+        
+        if(windowScrollTop > (myTimeLineOffsetTop + myTimeLineOuterHeight - windowHeight) && isGebeurt == false){
+            timeLeft.forEach(tm => tm.classList.toggle('backToNormal'));
+            timeRight.forEach(tm => tm.classList.toggle('backToNormal'));
+            isGebeurt = true;
+        }
+});
+// end timeline 
