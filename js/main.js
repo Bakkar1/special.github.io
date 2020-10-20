@@ -27,7 +27,7 @@ if(mainColors !== null){
 }
 /*open menu setting*/
 myIconSnt.onclick = function(){
-    lndPage.classList.toggle('filterB');
+    // lndPage.classList.toggle('filterB');
     mySettings.classList.toggle('open-settings');
     this.classList.toggle('turn-icon');
 }
@@ -356,8 +356,8 @@ window.addEventListener('scroll', function(){
             // had lmo3adala ghatkhlik tjib bdebt fach ywsal scroll top dyal skills window
         
         if(windowScrollTop > (myTimeLineOffsetTop + myTimeLineOuterHeight - windowHeight) && isGebeurt == false){
-            timeLeft.forEach(tm => tm.classList.toggle('backToNormal'));
-            timeRight.forEach(tm => tm.classList.toggle('backToNormal'));
+            timeLeft.forEach(tm => tm.classList.add('backToNormal'));
+            timeRight.forEach(tm => tm.classList.add('backToNormal'));
             isGebeurt = true;
         }
 });

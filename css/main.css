@@ -658,11 +658,11 @@ div.about-us .specSvg:hover{
 }
 .timeline .timeline-content:nth-child(2) .left,
 .timeline .timeline-content:nth-child(2) .right{
-    transition: all 1.2s ease-in-out;
+    transition: all 2s ease-in-out;
 }
 .timeline .timeline-content:nth-child(3) .left,
 .timeline .timeline-content:nth-child(3) .right{
-    transition: all 1.4s ease-in-out;
+    transition: all 4s ease-in-out;
 }
 
 .timeline .timeline-content .left{
@@ -673,6 +673,16 @@ div.about-us .specSvg:hover{
     float: right;
     transform: translateX(100%);
 }
+.timeline .timeline-content .left::before,
+.timeline .timeline-content .right::before{
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--default-color);
+    border: 3px solid var(--main-color);
+    position: absolute;
+}
 .backToNormal{
     transform: translateX(0) !important;
 }
@@ -680,6 +690,7 @@ div.about-us .specSvg:hover{
     padding: 20px;
     background-color: var(--default-color);
     border-radius: 10px;
+    position: relative;
 }
 .timeline .timeline-content .content h3{
     width: fit-content;
@@ -708,9 +719,54 @@ div.about-us .specSvg:hover{
     .timeline .timeline-content .right{
         transform: translateX(115%);
     }
+    .timeline .timeline-content .left::before,
+    .timeline .timeline-content .right::before{
+        display: none;
+    }
+    .timeline .timeline-content .left .content::before,
+    .timeline .timeline-content .right .content::before{
+        content: '';
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent transparent var(--default-color) transparent;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10 !important;
+    }
 }
 @media (min-width : 768px){
-
+    .timeline .timeline-content .left::before{
+        right: -35px;
+        top: 20px;
+    }
+    .timeline .timeline-content .right::before{
+        left: -35px;
+        top: 20px;
+    }
+    .timeline .timeline-content .left .content::after,
+    .timeline .timeline-content .right .content::after{
+        content: '';
+        border-style: solid;
+        border-width: 10px;
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 20px;
+        
+    }
+    .timeline .timeline-content .left .content::after{
+        right: -20px;
+        border-color: transparent transparent transparent var(--default-color) ;
+    }
+    .timeline .timeline-content .right .content::after{
+        left: -20px;
+        border-color: transparent var(--default-color) transparent transparent  ;
+        /*border-color: #03A9F4 white; bach tafham */
+    }
 }
 @media (min-width : 992px){
     
@@ -727,6 +783,21 @@ div.about-us .specSvg:hover{
     }
     .timeline .timeline-content .right{
         margin-left: calc(100% - 45%);
+    }
+    .timeline .timeline-content .left::before{
+        right: -70px;
+        top: 50%;
+        transform:  translateY(-50%);
+    }
+    .timeline .timeline-content .right::before{
+        left: -70px;
+        top: 50%;
+        transform:  translateY(-50%);
+    }
+    .timeline .timeline-content .left .content::after,
+    .timeline .timeline-content .right .content::after{
+        top: 50%;
+        transform:  translateY(-50%);
     }
 }
 /* end timeLine */
