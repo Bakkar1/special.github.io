@@ -723,6 +723,10 @@ div.about-us .specSvg:hover{
     .timeline .timeline-content .right::before{
         display: none;
     }
+    .timeline .timeline-content .left .content,
+    .timeline .timeline-content .right .content{
+        margin-top: 10px;
+    }
     .timeline .timeline-content .left .content::before,
     .timeline .timeline-content .right .content::before{
         content: '';
@@ -732,10 +736,9 @@ div.about-us .specSvg:hover{
         width: 0;
         height: 0;
         position: absolute;
-        top: -10px;
+        top: -20px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 10 !important;
     }
 }
 @media (min-width : 768px){
