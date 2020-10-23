@@ -362,11 +362,5 @@ window.addEventListener('scroll', function(){
         }
 });
 // end timeline 
-<<<<<<< HEAD
 
-var  roolback;
 
-let niks;
-//navigator.geolocation.getCurrentPosition((pos) => console.log(pos));
-=======
->>>>>>> parent of 7477532... roolback
