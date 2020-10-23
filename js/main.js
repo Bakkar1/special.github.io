@@ -366,3 +366,4 @@ window.addEventListener('scroll', function(){
 var  roolback;
 
 let niks;
+//navigator.geolocation.getCurrentPosition((pos) => console.log(pos));
