@@ -330,6 +330,9 @@ let myYear = document.querySelectorAll('.year'),
     timeRight = document.querySelectorAll('.right'),
     myTimeLine = document.querySelector('.sayHalo');
 
+
+
+    
     /*
 myYear.forEach(year => {
     year.onclick = function(){
