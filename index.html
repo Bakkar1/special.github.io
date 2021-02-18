@@ -33,9 +33,15 @@
                     <span class="no" data-background="no">No</span>
                 </div>
             </div>
+            <div class="option-box">
+                <h4>Show Bullets</h4>
+                <div class="bullets-option">
+                    <span class="yes active" data-display="show">show</span>
+                    <span class="no" data-display="hide">hide</span>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- end settigns box -->
     <!-- start landing page -->
     <div class="landing-page">
         <div class="container">
@@ -45,11 +51,10 @@
                     <i id="myBaar" class="fas fa-bars"></i>
                 </lable>
                 <ul class="links">
-                    <li><a href="#" class="active">about</a></li>
-                    <li><a href="#">features</a></li>
-                    <li><a href="#">service</a></li>
-                    <li><a href="#">products</a></li>
-                    <li><a href="#">contact</a></li>
+                    <li><a href="#" data-section=".about-us" class="active">about</a></li>
+                    <li><a href="#" data-section=".skills">skills</a></li>
+                    <li><a href="#" data-section=".gallery">gallery</a></li>
+                    <li><a href="#" data-section=".timeline">timeline</a></li>
                 </ul>
             </header>
             <section class="introduction-text">
@@ -61,7 +66,7 @@
     <!-- end landing page -->
     <!-- start about us -->
     <div class="container">
-        <div class="about-us">
+        <div id="ab-us" class="about-us">
             <section class="info-box">
                 <h2>about us</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit neque rerum fuga ex provident accusantium, tempora reprehenderit porro culpa ipsum error laboriosam deleniti perferendis in sunt, debitis alias eligendi id.</p>
@@ -344,6 +349,8 @@
         </div>
     </div>
     <!-- end testimonial -->
+        <p>testimonial</p>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

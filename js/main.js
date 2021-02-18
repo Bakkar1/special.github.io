@@ -35,10 +35,11 @@ myIconSnt.onclick = function(){
 // loop on all li
 for(var c = 0; c < myLiColors.length; c++){
     myLiColors[c].onclick = function(){
-        //remove active class from all the childeren
-        myLiColors.forEach(elm => elm.classList.remove('active'));
-        // ADD active class on current element
-        this.classList.add('active');
+        // //remove active class from all the childeren
+        // myLiColors.forEach(elm => elm.classList.remove('active'));
+        // // ADD active class on current element
+        // this.classList.add('active');
+        handleActive(myLiColors,this);
         //get data-color
         var myColor = this.getAttribute('data-color');
         //set colors on root
@@ -367,3 +368,108 @@ window.addEventListener('scroll', function(){
 // end timeline 
 
 
+//navigation
+// select aal bullets
+//const bullets = document.querySelectorAll('.bullet');
+/*
+bullets.forEach(bullet =>{
+    bullet.addEventListener("click",(e) =>{
+        document.querySelector(e.target.dataset.section).scrollIntoView({
+            behavior : 'smooth'
+        });
+    });
+});
+*/
+
+//fun
+
+function scrollToElm(targetElm){
+    targetElm.forEach(elm =>{
+        elm.addEventListener("click",(e) =>{
+            e.preventDefault();
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+                behavior : 'smooth'
+            });
+        });
+    });
+}
+
+//scrollToElm(bullets);
+
+const links = document.querySelectorAll('.links a');
+
+scrollToElm(links);
+
+/*
+disable right click
+window.addEventListener('contextmenu',(e) =>{
+    e.preventDefault();
+});
+
+*/
+
+const allSection = document.querySelectorAll('body > div');
+var navAll = document.createElement('div');
+navAll.classList.add('nav-bullets');
+
+
+allSection.forEach(div =>{
+    if(div.className != "settings-box" && div.className != "container")
+    {
+    var bulletElm = document.createElement('div');
+    bulletElm.setAttribute('data-section', '.' + div.className);
+    bulletElm.classList.add('bullet');
+    var tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.textContent = div.className.toString();
+    bulletElm.appendChild(tooltip);
+    navAll.appendChild(bulletElm);
+    }
+})
+document.body.appendChild(navAll);
+scrollToElm(document.querySelectorAll('.nav-bullets .bullet'));
+
+
+//handle active function
+function handleActive(ev,elm){
+    //remove active class from all the childeren
+    ev.forEach(elm =>{ 
+            elm.classList.remove('active')
+    });
+    // ADD active class on current element
+    elm.classList.add('active');
+}
+
+//show or hide bullets option
+let bulletssspan = document.querySelectorAll('.bullets-option span'),
+    bulletsContainer = document.querySelector('.nav-bullets'),
+    bulletLocalItem = window.localStorage.getItem('bulletLocalItem');
+if(bulletLocalItem != null){
+    if(bulletLocalItem == 'show'){
+        bulletsContainer.style.display = "block";
+        bulletssspan[0].classList.add('active');
+        bulletssspan[1].classList.remove('active');
+    }
+    else{
+        bulletsContainer.style.display = "none";
+        bulletssspan[0].classList.remove('active');
+        bulletssspan[1].classList.add('active');
+    }
+}
+
+bulletssspan.forEach(bullet => bullet.onclick = function(e){
+    handleShow(this);
+    this.classList.add('active');
+    window.localStorage.setItem('bulletLocalItem',this.dataset.display);
+})
+
+function handleShow(e){
+    if(e.dataset.display == 'show'  ){
+        bulletsContainer.style.display = "block";
+        e.parentElement.children[1].classList.remove('active');
+    }
+    else{
+        bulletsContainer.style.display = "none";
+        e.parentElement.children[0].classList.remove('active');
+    }
+}

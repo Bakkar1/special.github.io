@@ -17,6 +17,7 @@ body{
 }
 .h2{
     font-weight: bold;
+    
     font-size: 30px;
     color: var(--main-color);
     margin-top: 0;
@@ -40,9 +41,9 @@ body{
     clear: both;
 }
 /*
-     Create Heading Class
-     7it maymknch ykon 3andk ktar m h1 fl page
-     hadakchi 3alch kadir class h1 wt3tih khawas h1
+    Create Heading Class
+    7it maymknch ykon 3andk ktar m h1 fl page
+    hadakchi 3alch kadir class h1 wt3tih khawas h1
 */
 .h1{
     font-size: 2em;
@@ -224,8 +225,8 @@ div.settings-box .settings-container .option-box ul.colors-list li:nth-child(5){
     background-color: #4CAF50;
 }
 
-div.settings-box .random-background .yes,
-div.settings-box .random-background .no{
+div.settings-box div .yes,
+div.settings-box div .no{
     margin-top: 20px;
     display: inline-block;
     width: 35px;
@@ -237,17 +238,68 @@ div.settings-box .random-background .no{
     opacity: .5;
     transition: var(--default-transition);
 }
-div.settings-box .random-background .yes{
+div.settings-box div .yes{
     background-color: #03A9F4;
 }
-div.settings-box .random-background .no{
+div.settings-box div .no{
     background-color: #03A9F4;
 }
-div.settings-box .random-background span.active{
+div.settings-box div span.active{
     opacity: 1;
     background-color: var(--main-color);
 }
 /* end settings box */
+/* start navigation bullets */
+.nav-bullets{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 100;
+}
+.nav-bullets .bullet{
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    margin: 10px auto;
+    cursor: pointer;
+    position: relative;
+}
+.nav-bullets .bullet .active{
+
+}
+.nav-bullets .bullet .tooltip{
+    position: absolute;
+    width: 100px;
+    color: var(--default-color);
+    padding: 4px 10px;
+    right: 40px;
+    top: -4px;
+    background-color: var(--main-color);
+    border-radius: 5px 0 0 5px;
+    transition: var(--default-transition);
+    transform: scale(0);
+    transform-origin: right;
+    cursor: default;
+    pointer-events: none;
+}
+.nav-bullets .bullet:hover .tooltip{
+    transform: scale(1)
+}
+.nav-bullets .bullet .tooltip::after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: -26px;
+    border-style: solid;
+    border-width: 13px;
+    height: 0;
+    width: 0;
+    border-color: transparent transparent transparent var(--main-color);
+}
+/* end navigation bullets */
 /* start landing page*/
 div.landing-page{
     min-height: 100vh;
